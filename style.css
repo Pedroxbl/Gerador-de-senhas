@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+
+:root {
+    --branco: white;
+    --cor-de-fundo: #00162E;
+    --fundo-senha: #00244D;
+    --fundo-texto: #001E40;
+    --borda: #0075FF;
+    --roboto: 'Roboto', sans-serif;
+    --roboto-mono: 'Roboto Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+body {
+    color: var(--branco);
+    background-color: var(--cor-de-fundo);
+    font-family: var(--roboto);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header .logo {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-family: var(--roboto-mono);
+    font-size: 28px;
+}
+
+.subtitulo {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.gerador {
+    background: var(--fundo-senha);
+    padding: 20px;
+    border-bottom: 4px solid var(--borda);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.senha-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#campo-senha {
+    flex: 1;
+    background-color: var(--fundo-senha);
+    border: none;
+    color: var(--branco);
+    font-family: var(--roboto-mono);
+    font-size: 20px;
+    padding: 8px;
+}
+
+#campo-senha:focus {
+    outline: none;
+}
+
+#copiar {
+    background: var(--borda);
+    border: none;
+    color: var(--branco);
+    font-size: 18px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#copiar:hover {
+    background: #3399ff;
+}
+
+.entropia {
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+.configuracoes {
+    background: var(--fundo-texto);
+    border: 2px solid var(--borda);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.configuracoes h2 {
+    font-family: var(--roboto-mono);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.item label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.checkbox {
+    margin-right: 6px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/* Slider estilizado */
+#tamanho-senha {
+    width: 100%;
+    height: 6px;
+    background: var(--fundo-senha);
+    border-radius: 5px;
+    appearance: none;
+    cursor: pointer;
+    accent-color: var(--borda);
+}
+
+#tamanho-senha::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--borda);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#tamanho-senha::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: var(--borda);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#tamanho-valor {
+    font-weight: bold;
+    color: var(--borda);
+}
+
+/* Barra de força */
+.barra {
+    background-color: var(--fundo-senha);
+    height: 14px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.forca {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.fraca {
+    width: 25%;
+    background-color: #E71B32;
+}
+
+.media {
+    width: 50%;
+    background-color: #FAF408;
+}
+
+.forte {
+    width: 100%;
+    background-color: #00FF85;
+}
+
+.nivel {    
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Toast */
+#toast {
+    visibility: hidden;
+    min-width: 150px;
+    background-color: var(--borda);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    font-size: 14px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s, bottom 0.4s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}

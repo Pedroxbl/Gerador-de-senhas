@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <img src="unlock.svg" alt="Cadeado" class="logo">
+            <h1>Gerador de Senhas</h1>
+            <p class="subtitulo">Crie senhas aleatórias e seguras com facilidade</p>
+        </header>
+
+        <section class="gerador">
+            <div class="senha-box">
+                <input type="text" id="campo-senha">
+                <button id="copiar" title="Copiar senha">📋</button>
+            </div>
+            <p class="entropia"></p>
+        </section>
+
+        <section class="configuracoes">
+            <h2>Personalize sua senha</h2>
+
+            <div class="item">
+                <label for="tamanho-senha">Número de caracteres: <span id="tamanho-valor">12</span></label>
+                <input type="range" id="tamanho-senha" min="4" max="32" value="12">
+            </div>
+
+            <div class="item">
+                <label><input type="checkbox" class="checkbox" checked> Letras maiúsculas</label>
+                <label><input type="checkbox" class="checkbox"> Letras minúsculas</label>
+                <label><input type="checkbox" class="checkbox"> Números</label>
+                <label><input type="checkbox" class="checkbox"> Símbolos</label>
+            </div>
+
+            <div class="item">
+                <label>Força da senha:</label>
+                <div class="barra">
+                    <div class="forca fraca"></div>
+                </div>
+                <div class="nivel">
+                    <span>Fraca</span>
+                    <span>Média</span>
+                    <span>Forte</span>
+                </div>
+            </div>
+        </section>
+
+        <div id="toast">Senha copiada!</div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
