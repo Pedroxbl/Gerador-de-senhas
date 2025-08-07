@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
 :root {
-    --branco: white;
-    --cor-de-fundo: #00162E;
-    --fundo-senha: #00244D;
-    --fundo-texto: #001E40;
-    --borda: #0075FF;
+    --amarelo: #FFD700;
+    --branco: #ffffff;
+    --preto: #000000;
+    --fundo-principal: #0A0A0A;
+    --fundo-secundario: #1A1A1A;
+    --fundo-senha: #111111;
+    --borda: var(--amarelo);
+    --texto: var(--amarelo);
     --roboto: 'Roboto', sans-serif;
     --roboto-mono: 'Roboto Mono', monospace;
 }
@@ -18,8 +21,8 @@
 }
 
 body {
-    color: var(--branco);
-    background-color: var(--cor-de-fundo);
+    color: var(--texto);
+    background-color: var(--fundo-principal);
     font-family: var(--roboto);
     display: flex;
     justify-content: center;
@@ -39,15 +42,18 @@ body {
 .header .logo {
     width: 60px;
     margin-bottom: 10px;
+    filter: brightness(1.2);
 }
 
 .header h1 {
     font-family: var(--roboto-mono);
     font-size: 28px;
+    color: var(--texto);
 }
 
 .subtitulo {
     font-size: 16px;
+    color: var(--texto);
     opacity: 0.8;
 }
 
@@ -68,21 +74,23 @@ body {
 #campo-senha {
     flex: 1;
     background-color: var(--fundo-senha);
-    border: none;
-    color: var(--branco);
+    border: 2px solid var(--borda);
+    color: var(--texto);
     font-family: var(--roboto-mono);
     font-size: 20px;
     padding: 8px;
+    border-radius: 6px;
 }
 
 #campo-senha:focus {
     outline: none;
+    box-shadow: 0 0 4px var(--amarelo);
 }
 
 #copiar {
     background: var(--borda);
     border: none;
-    color: var(--branco);
+    color: var(--preto);
     font-size: 18px;
     padding: 8px 10px;
     border-radius: 5px;
@@ -90,17 +98,18 @@ body {
 }
 
 #copiar:hover {
-    background: #3399ff;
+    background: #ffe13b;
 }
 
 .entropia {
     font-size: 14px;
     margin-top: 10px;
-    opacity: 0.8;
+    opacity: 0.85;
+    color: var(--texto);
 }
 
 .configuracoes {
-    background: var(--fundo-texto);
+    background: var(--fundo-secundario);
     border: 2px solid var(--borda);
     padding: 20px;
     border-radius: 10px;
@@ -110,6 +119,7 @@ body {
     font-family: var(--roboto-mono);
     font-size: 20px;
     margin-bottom: 15px;
+    color: var(--texto);
 }
 
 .item {
@@ -120,6 +130,7 @@ body {
     display: block;
     margin-bottom: 8px;
     font-size: 16px;
+    color: var(--texto);
 }
 
 .checkbox {
@@ -158,7 +169,7 @@ body {
 
 #tamanho-valor {
     font-weight: bold;
-    color: var(--borda);
+    color: var(--texto);
 }
 
 /* Barra de força */
@@ -169,6 +180,7 @@ body {
     border-radius: 5px;
     margin-top: 5px;
     overflow: hidden;
+    border: 1px solid var(--borda);
 }
 
 .forca {
@@ -191,11 +203,12 @@ body {
     background-color: #00FF85;
 }
 
-.nivel {    
+.nivel {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
     margin-top: 4px;
+    color: var(--texto);
 }
 
 /* Toast */
@@ -203,7 +216,7 @@ body {
     visibility: hidden;
     min-width: 150px;
     background-color: var(--borda);
-    color: white;
+    color: var(--preto);
     text-align: center;
     border-radius: 5px;
     padding: 10px;
